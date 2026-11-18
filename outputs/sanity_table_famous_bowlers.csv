@@ -1,0 +1,11 @@
+Player,Rank,HP_Balls,HP_Econ,Base_Econ,Shrunk_Rating,Delta_Impact,Success_Rate_%,Model_Diagnostic
+Jasprit Bumrah,4,439,7.61,7.05,13.48,-19.93,50.0,"Direct ball-by-ball: 439 HP legal balls bowled, 557 runs conceded, 14 wkts. Actual Econ 7.61 vs Exp 8.68 (-1.07 rpo saved); Wkt Rate 3.19% vs Exp 5.07% (-8.2 wkt deficit). Baseline skill (+18.59) secures Rank 4 overall (Rating +13.48)."
+Rashid Khan,6,658,6.72,7.62,12.97,16.97,62.8,"Direct ball-by-ball: 658 HP legal balls bowled, 737 runs conceded, 42 wkts. Actual Econ 6.72 vs Exp 8.35 (-1.63 rpo saved); HP Wkt Rate 6.38% (SR 15.7). Shrunk baseline +5.70, delta +7.27 yields Rating +12.97, Rank 6 overall."
+Arshdeep Singh,115,784,9.31,8.95,0.12,-22.63,48.3,Rank 115: High exposure volume (784 balls); economy elevates under death pressure.
+Yuzvendra Chahal,33,626,8.2,8.68,7.04,17.77,50.0,Rank 33: High exposure volume (626 balls); economy elevates under death pressure.
+Mohammed Shami,27,254,8.55,8.63,8.02,9.64,50.0,Rank 27: High exposure volume (254 balls); economy elevates under death pressure.
+Bhuvneshwar Kumar,15,522,8.53,8.15,10.68,1.18,45.7,Rank 15: High exposure volume (522 balls); economy elevates under death pressure.
+Kagiso Rabada,20,348,8.62,9.38,9.24,8.86,56.5,Rank 20: High exposure volume (348 balls); economy elevates under death pressure.
+Mitchell Starc,119,158,10.94,9.39,-0.53,-31.44,23.1,Rank 119: High exposure volume (158 balls); economy elevates under death pressure.
+Sunil Narine,3,468,6.82,6.85,14.39,14.62,55.6,"Top 10 Finisher (Rank 3): Shrunk Rating 14.39, elite defensive control under heat."
+Axar Patel,43,616,7.83,7.89,6.13,6.48,48.8,Rank 43: High exposure volume (616 balls); economy elevates under death pressure.
