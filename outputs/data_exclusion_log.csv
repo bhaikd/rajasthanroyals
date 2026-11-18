@@ -1,0 +1,5 @@
+Reason,Deliveries_Affected,Matches_Affected,Action
+Duplicate deliveries,0,0,Deduplicated
+Super Overs (Innings > 2),38,6,Excluded from 120-ball pressure model
+DLS / Rain-shortened matches,5254,38,Excluded from WP/Pressure model to avoid target distortion
+Abandoned / No Result matches,1753,40,Excluded due to lack of ground-truth outcome
