@@ -1,0 +1,10 @@
+Rank_i,Player_i,Rank_j,Player_j,P_i_beats_j,Distinguishability
+1,Suryakumar Yadav,2,Vaibhav Sooryavanshi,74.8,Favored (p>=0.70)
+2,Vaibhav Sooryavanshi,3,Jos Buttler,50.6,Partly Distinguishable
+3,Jos Buttler,4,Heinrich Klaasen,53.6,Partly Distinguishable
+4,Heinrich Klaasen,5,Reeza Hendricks,53.4,Partly Distinguishable
+5,Reeza Hendricks,6,Abhishek Sharma,50.4,Partly Distinguishable
+6,Abhishek Sharma,7,Phil Salt,52.4,Partly Distinguishable
+7,Phil Salt,8,Rinku Singh,54.3,Partly Distinguishable
+8,Rinku Singh,9,Shreyas Iyer,57.3,Partly Distinguishable
+9,Shreyas Iyer,10,Tim David,51.6,Partly Distinguishable
