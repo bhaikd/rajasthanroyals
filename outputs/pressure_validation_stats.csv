@@ -1,0 +1,9 @@
+Metric,Ordinary,High_Pressure,Difference,Effect_Size,P_Value,Nature
+Strike Rotation (1s & 2s %),41.85,43.24,1.39,+1.39 pp (d=0.028),4.9014e-08,Non-Circular Domain Validation
+Dot Ball %,35.59,34.42,-1.17,-1.17 pp (d=-0.024),6.9096e-06,Non-Circular Domain Validation
+Run-outs & Stumpings (% of Wickets),7.22,8.22,1.0,+1.00 pp (d=0.038),9.5081e-02,Not Statistically Significant (p=0.095)
+Runs Per Ball Variance,3.037,2.974,-0.064,-0.064 var diff,3.8297e-03,Non-Circular Domain Validation
+Run Rate (per 6 balls),8.52,8.53,0.01,+0.01 rpo (d=0.001),7.9922e-01,Standard Scoring Metric (Flat)
+Boundary %,18.01,17.81,-0.2,-0.20 pp (d=-0.005),3.2466e-01,Standard Scoring Metric (Flat)
+Wicket Rate %,5.42,5.37,-0.05,-0.05 pp (d=-0.002),7.0636e-01,Standard Scoring Metric (Flat)
+WP Volatility / Swing (%/ball),1.59,3.6,2.0,+2.00 pp/ball (d=0.528),< 1e-10,Definitional (Derived from WP)
