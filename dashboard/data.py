@@ -185,24 +185,33 @@ def load_matches_metadata():
 @st.cache_data
 def load_match_ball_by_ball(match_id):
     """Loads ball-by-ball leverage and win probability for a given match."""
-    fp = DATA_DIR / "master_with_pressure.csv"
-    if not fp.exists():
-        return pd.DataFrame()
+    parquet_fp = DATA_DIR / "pressure_deliveries_slim.parquet"
+    csv_fp = DATA_DIR / "master_with_pressure.csv"
     cols = ['match_id', 'innings', 'overid', 'over_ball_num', 'striker_name', 'bowler_name', 
             'runs_off_bat', 'extras_runs', 'total_runs', 'is_wicket', 'phase', 'win_probability', 'leverage', 'high_pressure']
-    df = pd.read_csv(fp, usecols=cols)
+    
+    if parquet_fp.exists():
+        df = pd.read_parquet(parquet_fp, columns=cols)
+    elif csv_fp.exists():
+        df = pd.read_csv(csv_fp, usecols=cols)
+    else:
+        return pd.DataFrame()
     return df[df['match_id'] == match_id].sort_values(['innings', 'overid', 'over_ball_num']).reset_index(drop=True)
 
 @st.cache_data
 def load_player_match_history(player_name, role="Batter"):
     """Loads match-by-match high-pressure impact/performance for a player."""
-    fp = DATA_DIR / "master_with_pressure.csv"
-    if not fp.exists():
+    parquet_fp = DATA_DIR / "pressure_deliveries_slim.parquet"
+    csv_fp = DATA_DIR / "master_with_pressure.csv"
+    if not parquet_fp.exists() and not csv_fp.exists():
         return pd.DataFrame()
     
     if role == "Batter":
         cols = ['match_id', 'match_date', 'comp_name', 'striker_name', 'runs_off_bat', 'is_wicket', 'high_pressure']
-        df = pd.read_csv(fp, usecols=cols)
+        if parquet_fp.exists():
+            df = pd.read_parquet(parquet_fp, columns=cols)
+        else:
+            df = pd.read_csv(csv_fp, usecols=cols)
         df = df[df['striker_name'] == player_name]
         if df.empty:
             return pd.DataFrame()
@@ -216,7 +225,10 @@ def load_player_match_history(player_name, role="Batter"):
         return hp.sort_values('match_date')
     else:
         cols = ['match_id', 'match_date', 'comp_name', 'bowler_name', 'total_runs', 'is_wicket', 'is_legal', 'high_pressure']
-        df = pd.read_csv(fp, usecols=cols)
+        if parquet_fp.exists():
+            df = pd.read_parquet(parquet_fp, columns=cols)
+        else:
+            df = pd.read_csv(csv_fp, usecols=cols)
         df = df[df['bowler_name'] == player_name]
         if df.empty:
             return pd.DataFrame()
