@@ -1,0 +1,23 @@
+# Python virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
+.pytest_cache/
+
+# Large generated intermediate artifacts exceeding GitHub 100MB limit
+data/master_with_expected_values.csv
+data/master_with_pressure.csv
+
+# Extracted duplicate zip pack
+6af458274c1e8_data_pack/
+
+# Operating system files
+.DS_Store
+Thumbs.db
