@@ -1,0 +1,11 @@
+Player,Rank,HP_Balls,HP_SR,Base_SR,Shrunk_Rating,Delta_Impact,Success_Rate_%,Model_Diagnostic
+Virat Kohli,16,669,149.8,143.5,17.52,10.45,54.5,"Direct ball-by-ball: 669 HP balls (excluding 23 wides), 1002 runs, 20 outs (2.99% out rate vs 4.65% exp). Actual SR 149.8 vs Exp 141.2 (+8.6 SR); preserves +11.1 wkts vs expected. Shrunk baseline +10.22, shrunk delta +7.36, Rating +17.58, Rank 25."
+Rohit Sharma,117,438,150.7,141.3,5.4,3.45,68.2,"Direct ball-by-ball: 438 HP balls (excluding 15 wides), 660 runs, 26 outs (5.94% vs 4.44% exp). Actual SR 150.7 vs Exp 141.3; early dismissals create a 6.6 wkt deficit. Baseline +11.08, delta -2.94 yields Rank 48."
+Suryakumar Yadav,1,697,167.9,165.8,28.39,15.01,72.5,"Direct ball-by-ball: 697 HP balls faced (723 total incl 26 wides), 1170 runs, 27 outs. HP SR 167.9 vs Exp 136.4 (+31.5 SR). Shrunk baseline +19.39, shrunk delta +8.99, Rating +28.39. Rank 1 globally."
+Jos Buttler,3,557,164.6,153.1,23.06,15.78,70.4,"Direct ball-by-ball: 557 HP balls faced (568 total incl 11 wides), 917 runs, 19 outs. HP SR 164.6 vs Exp 140.9 (+23.7 SR). Shrunk baseline +14.37, shrunk delta +8.68, Rating +23.06. Rank 3 overall."
+Hardik Pandya,113,441,136.3,143.2,6.48,-12.13,51.9,Rank 113: Stable baseline (SR 143.2); moderate high-pressure boundary acceleration ceiling.
+Glenn Maxwell,84,293,164.8,159.2,9.53,-1.43,57.9,Rank 84: Stable baseline (SR 159.2); moderate high-pressure boundary acceleration ceiling.
+Nicholas Pooran,17,512,155.3,157.7,17.38,7.32,48.5,Rank 17: Stable baseline (SR 157.7); moderate high-pressure boundary acceleration ceiling.
+Shubman Gill,22,697,156.2,147.0,16.93,8.49,67.6,Rank 22: Stable baseline (SR 147.0); moderate high-pressure boundary acceleration ceiling.
+Lokesh Rahul,30,566,148.2,138.6,15.15,2.78,65.4,Rank 30: Stable baseline (SR 138.6); moderate high-pressure boundary acceleration ceiling.
+MS Dhoni,N/A (<100 balls),0,0.0,0.0,0.0,0.0,0.0,Ineligible (<100 HP balls faced in 2022-26 data)
