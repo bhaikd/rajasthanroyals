@@ -37,6 +37,7 @@ from data import (
 from theme import (
     inject_theme,
     apply_plotly_theme,
+    get_theme_colors,
     NAVY,
     PRIMARY_TEXT,
     BODY_TEXT,
@@ -62,49 +63,76 @@ st.set_page_config(
 # Apply CSS injection
 inject_theme()
 
+# Dynamic theme color synchronization
+colors = get_theme_colors()
+NAVY = colors["NAVY"]
+PRIMARY_TEXT = colors["PRIMARY_TEXT"]
+BODY_TEXT = colors["BODY_TEXT"]
+MUTED_TEXT = colors["MUTED_TEXT"]
+PINK = colors["PINK"]
+BATTER_COLOR = colors["BATTER_COLOR"]
+BOWLER_COLOR = colors["BOWLER_COLOR"]
+PANEL_BG = colors["PANEL_BG"]
+WHITE = colors["WHITE"]
+CARD_BG = colors["CARD_BG"]
+BORDER_COLOR = colors["BORDER_COLOR"]
+GREEN_TINT = colors["GREEN_TINT"]
+GREEN_TEXT = colors["GREEN_TEXT"]
+MUTED_RED = colors["MUTED_RED"]
+
 def render_html_block(html_str):
     """Renders HTML cleanly without leading whitespace to prevent Markdown code block interpretation."""
     clean_html = "\n".join(line.strip() for line in html_str.splitlines() if line.strip())
     st.html(clean_html)
 
-# --- SIDEBAR NAVIGATION ---
-sidebar_html = f"""
-<div style="padding-top:0.2rem;margin-bottom:12px;">
-  <div class="pink-tag">SUPERR SELECTOR S2</div>
-  <h3 style="margin-top:2px;margin-bottom:4px;color:{NAVY};font-size:1.15rem;">Round 1 Dashboard</h3>
-  <div style="font-size:0.80rem;color:{MUTED_TEXT};line-height:1.4;">Most Reliable T20 Players Under High Pressure</div>
-</div>
-"""
-render_html_block(sidebar_html)
+# --- SIDEBAR NAVIGATION & THEME TOGGLE ---
+with st.sidebar:
+    sidebar_html = f"""
+    <div style="padding-top:0.2rem;margin-bottom:8px;">
+      <div class="pink-tag">SUPERR SELECTOR S2</div>
+      <h3 style="margin-top:2px;margin-bottom:4px;color:{NAVY};font-size:1.15rem;">Round 1 Dashboard</h3>
+      <div style="font-size:0.80rem;color:{MUTED_TEXT};line-height:1.4;">Most Reliable T20 Players Under High Pressure</div>
+    </div>
+    """
+    render_html_block(sidebar_html)
 
-nav_page = st.sidebar.radio(
-    "Navigation Menu",
-    [
-        "1. Overview",
-        "2. Player Explorer",
-        "3. Rankings Explorer",
-        "4. Evidence & Reliability",
-        "5. Pressure Explorer",
-        "6. Excluded Players & Methodology"
-    ],
-    index=0
-)
+    # Dark Mode toggle button
+    is_dark = st.session_state.get("dark_mode", False)
+    mode_btn_label = "☀️ Switch to Light Mode" if is_dark else "🌙 Switch to Dark Mode"
+    if st.button(mode_btn_label, key="theme_toggle_btn", use_container_width=True, help="Toggle between Dark and Light mode"):
+        st.session_state["dark_mode"] = not is_dark
+        st.rerun()
 
-# Sidebar metadata panel
-key_metrics = load_key_metrics()
-sidebar_meta_html = f"""
-<div style="margin-top:16px;font-size:0.76rem;color:{BODY_TEXT};line-height:1.6;background:{PANEL_BG};padding:12px;border-radius:6px;border:1px solid {BORDER_COLOR};">
-  <strong style="color:{NAVY};font-size:0.80rem;">Dataset Scope:</strong><br>
-  • <strong>{key_metrics['matches']}</strong> Matches (IPL & T20I post-2021)<br>
-  • <strong>{key_metrics['deliveries']:,}</strong> Deliveries Analyzed<br>
-  • <strong>{key_metrics['hp_balls']:,}</strong> High-Pressure Deliveries (Top 25%)<br>
-  • <strong>{key_metrics['eligible_batters']}</strong> Batters / <strong>{key_metrics['eligible_bowlers']}</strong> Bowlers Eligible<br>
-  <br>
-  <strong style="color:{NAVY};">Pipeline:</strong> Round 1 Production<br>
-  <strong style="color:{NAVY};">Author:</strong> Kishalay Das
-</div>
-"""
-render_html_block(sidebar_meta_html)
+    st.markdown('<div style="margin-bottom:12px;"></div>', unsafe_allow_html=True)
+
+    nav_page = st.radio(
+        "Navigation Menu",
+        [
+            "1. Overview",
+            "2. Player Explorer",
+            "3. Rankings Explorer",
+            "4. Evidence & Reliability",
+            "5. Pressure Explorer",
+            "6. Excluded Players & Methodology"
+        ],
+        index=0
+    )
+
+    # Sidebar metadata panel
+    key_metrics = load_key_metrics()
+    sidebar_meta_html = f"""
+    <div style="margin-top:16px;font-size:0.76rem;color:{BODY_TEXT};line-height:1.6;background:{PANEL_BG};padding:12px;border-radius:6px;border:1px solid {BORDER_COLOR};">
+      <strong style="color:{NAVY};font-size:0.80rem;">Dataset Scope:</strong><br>
+      • <strong>{key_metrics['matches']}</strong> Matches (IPL & T20I post-2021)<br>
+      • <strong>{key_metrics['deliveries']:,}</strong> Deliveries Analyzed<br>
+      • <strong>{key_metrics['hp_balls']:,}</strong> High-Pressure Deliveries (Top 25%)<br>
+      • <strong>{key_metrics['eligible_batters']}</strong> Batters / <strong>{key_metrics['eligible_bowlers']}</strong> Bowlers Eligible<br>
+      <br>
+      <strong style="color:{NAVY};">Pipeline:</strong> Round 1 Production<br>
+      <strong style="color:{NAVY};">Author:</strong> Kishalay Das
+    </div>
+    """
+    render_html_block(sidebar_meta_html)
 
 # Helper function to render title block
 def render_header(subtitle="Overview"):
@@ -256,7 +284,7 @@ if nav_page == "1. Overview":
         render_top10_table(df_top10_bowl, "Bowler")
         
     footnote_html = f"""
-    <div style="font-size:0.80rem;color:{MUTED_TEXT};margin-top:8px;padding:8px 12px;background:#FAFAFC;border-radius:4px;border:1px dashed {BORDER_COLOR};">
+    <div style="font-size:0.80rem;color:{MUTED_TEXT};margin-top:8px;padding:8px 12px;background:{colors['CODE_BG']};border-radius:4px;border:1px dashed {BORDER_COLOR};">
       ℹ️ <strong>Footnote:</strong> Players representing Pakistan or Pakistan A are excluded from both rankings as an author's eligibility choice 
       (see the <strong>Excluded Players & Methodology</strong> page for the transparent audit table).
     </div>
@@ -293,7 +321,7 @@ elif nav_page == "2. Player Explorer":
         delta_color = MUTED_RED if p_row["shrunk_delta"] < 0 else (GREEN_TEXT if is_elevated else NAVY)
         
         card_html = f"""
-        <div class="stat-card" style="border-left:4px solid {PINK if disc=='Batters' else NAVY};">
+        <div class="stat-card" style="border-left:4px solid {PINK if disc=='Batters' else BOWLER_COLOR};">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
             <div>
               <div class="pink-tag">RANK #{int(p_row['rank'])} &nbsp;·&nbsp; {disc[:-1].upper()}</div>
@@ -382,22 +410,22 @@ elif nav_page == "2. Player Explorer":
                 x=[null_low, null_high],
                 y=[selected_player, selected_player],
                 mode="lines",
-                line=dict(color="#CBD5E0", width=12),
+                line=dict(color=colors["NULL_BAND_BORDER"], width=12),
                 name="Null 95% Permutation Band"
             ))
             fig_ci.add_trace(go.Scatter(
                 x=[p_row["ci_lower_90"], p_row["ci_upper_90"]],
                 y=[selected_player, selected_player],
                 mode="lines+markers",
-                line=dict(color=PINK if disc=="Batters" else NAVY, width=3),
-                marker=dict(size=[8, 8], color=PINK if disc=="Batters" else NAVY),
+                line=dict(color=PINK if disc=="Batters" else BOWLER_COLOR, width=3),
+                marker=dict(size=[8, 8], color=PINK if disc=="Batters" else BOWLER_COLOR),
                 name="90% Match-Grouped CI"
             ))
             fig_ci.add_trace(go.Scatter(
                 x=[p_row["shrunk_rating"]],
                 y=[selected_player],
                 mode="markers",
-                marker=dict(size=14, color=PINK if disc=="Batters" else NAVY, symbol="diamond"),
+                marker=dict(size=14, color=PINK if disc=="Batters" else BOWLER_COLOR, symbol="diamond"),
                 name="Posterior Rating"
             ))
             apply_plotly_theme(fig_ci, height=240, title=f"90% CI: [{p_row['ci_lower_90']:.2f}, {p_row['ci_upper_90']:.2f}]")
@@ -410,7 +438,7 @@ elif nav_page == "2. Player Explorer":
             fig_comp.add_trace(go.Bar(
                 x=["Baseline Impact", "High-Pressure Impact"],
                 y=[p_row["baseline_impact_100"], p_row["raw_impact_100"]],
-                marker_color=["#718096", PINK if disc=="Batters" else NAVY],
+                marker_color=["#718096", PINK if disc=="Batters" else BOWLER_COLOR],
                 text=[f"{p_row['baseline_impact_100']:+.2f}", f"{p_row['raw_impact_100']:+.2f}"],
                 textposition="auto"
             ))
@@ -430,7 +458,7 @@ elif nav_page == "2. Player Explorer":
                     x=list(range(1, len(hist) + 1)),
                     y=hist[y_col],
                     mode="lines+markers",
-                    line=dict(color=PINK if disc=="Batters" else NAVY, width=2),
+                    line=dict(color=PINK if disc=="Batters" else BOWLER_COLOR, width=2),
                     marker=dict(size=6),
                     hovertext=[f"Match {r['match_id']} ({r['comp_name']}): {r[y_col]:.1f}" for _, r in hist.iterrows()],
                     name=y_label
@@ -456,7 +484,7 @@ elif nav_page == "2. Player Explorer":
                 p_row = comp_df[comp_df["player_name"] == p_name].iloc[0]
                 with cols[i]:
                     comp_card_html = f"""
-                    <div class="stat-card" style="border-top:4px solid {PINK if disc=='Batters' else NAVY};text-align:center;">
+                    <div class="stat-card" style="border-top:4px solid {PINK if disc=='Batters' else BOWLER_COLOR};text-align:center;">
                       <div class="pink-tag">RANK #{int(p_row['rank'])}</div>
                       <h3 style="margin:4px 0;color:{NAVY};">{p_name}</h3>
                       <div style="font-size:0.75rem;color:{MUTED_TEXT};">{p_row['teams']}</div>
@@ -614,8 +642,8 @@ elif nav_page == "4. Evidence & Reliability":
             x=nb_rev["Batter_Null_Upper_95"] - nb_rev["Batter_Null_Lower_95"],
             base=nb_rev["Batter_Null_Lower_95"],
             orientation='h',
-            marker_color="#F4F6FA",
-            marker_line_color="#CBD5E0",
+            marker_color=colors["NULL_BAND_BG"],
+            marker_line_color=colors["NULL_BAND_BORDER"],
             marker_line_width=1,
             name="Within-Match 95% Null Band"
         ))
@@ -648,8 +676,8 @@ elif nav_page == "4. Evidence & Reliability":
             x=nb_rev["Bowler_Null_Upper_95"] - nb_rev["Bowler_Null_Lower_95"],
             base=nb_rev["Bowler_Null_Lower_95"],
             orientation='h',
-            marker_color="#F4F6FA",
-            marker_line_color="#CBD5E0",
+            marker_color=colors["NULL_BAND_BG"],
+            marker_line_color=colors["NULL_BAND_BORDER"],
             marker_line_width=1,
             name="Within-Match 95% Null Band"
         ))
@@ -661,12 +689,12 @@ elif nav_page == "4. Evidence & Reliability":
                 symmetric=False,
                 array=top10_bowl["ci_upper_90"] - top10_bowl["shrunk_rating"],
                 arrayminus=top10_bowl["shrunk_rating"] - top10_bowl["ci_lower_90"],
-                color=NAVY,
+                color=BOWLER_COLOR,
                 thickness=2,
                 width=6
             ),
             mode='markers',
-            marker=dict(color=NAVY, size=10),
+            marker=dict(color=BOWLER_COLOR, size=10),
             name="Posterior Rating (90% CI)"
         ))
         apply_plotly_theme(fig_fbowl, height=450, title="Top 10 Bowlers Forest Plot")
@@ -679,7 +707,7 @@ elif nav_page == "4. Evidence & Reliability":
     ranges_df = load_rank_ranges()
     fig_ranges = go.Figure()
     for _, r in ranges_df.iterrows():
-        p_color = PINK if r["Discipline"] == "Batter" else NAVY
+        p_color = PINK if r["Discipline"] == "Batter" else BOWLER_COLOR
         fig_ranges.add_trace(go.Scatter(
             x=[r["Min_Rank"], r["Max_Rank"]],
             y=[r["Player"], r["Player"]],
@@ -814,7 +842,7 @@ elif nav_page == "5. Pressure Explorer":
             name=f"Innings {inn}",
             x=sub["phase"],
             y=sub["High_Pressure_%"],
-            marker_color=PINK if inn==1 else NAVY,
+            marker_color=PINK if inn==1 else BOWLER_COLOR,
             text=[f"{v:.1f}%" for v in sub["High_Pressure_%"]],
             textposition="auto"
         ))
@@ -850,7 +878,7 @@ elif nav_page == "5. Pressure Explorer":
                 y=deliveries["win_probability"],
                 mode="lines",
                 name="Win Probability (Batting Team)",
-                line=dict(color=NAVY, width=2)
+                line=dict(color=BOWLER_COLOR, width=2)
             ))
             fig_match.add_trace(go.Scatter(
                 x=list(range(1, len(deliveries)+1)),
