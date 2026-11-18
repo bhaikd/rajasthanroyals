@@ -1,0 +1,21 @@
+Rank,Discipline,Player,Raw_HP_Impact,Opp_Quality_Diff,Adj_HP_Impact,Teams,Weak_Opp_Flag
+1,Batter,Suryakumar Yadav,45.13,-0.43,44.7,"India, Mumbai Indians",Normal
+2,Batter,Vaibhav Sooryavanshi,65.75,0.82,66.57,"Rajasthan Royals, India, India A",Normal
+3,Batter,Jos Buttler,35.64,0.07,35.71,"Rajasthan Royals, England, Gujarat Titans",Normal
+4,Batter,Heinrich Klaasen,43.77,0.6,44.37,"South Africa, Sunrisers Hyderabad",Normal
+5,Batter,Reeza Hendricks,63.8,-0.44,63.36,South Africa,Normal
+6,Batter,Abhishek Sharma,29.58,-0.6,28.98,"Sunrisers Hyderabad, India, India A",Normal
+7,Batter,Phil Salt,38.34,-0.11,38.23,"England, Delhi Capitals, Kolkata Knight Riders, Royal Challengers Bengaluru",Normal
+8,Batter,Rinku Singh,46.69,-0.09,46.6,"Kolkata Knight Riders, India",Normal
+9,Batter,Shreyas Iyer,35.25,-0.44,34.81,"India, Kolkata Knight Riders, Punjab Kings",Normal
+10,Batter,Tim David,37.85,0.29,38.14,"Mumbai Indians, Australia, Royal Challengers Bengaluru",Normal
+1,Bowler,Josh Hazlewood,38.22,7.37,45.59,"Australia, Royal Challengers Bengaluru",Normal
+2,Bowler,Matheesha Pathirana,46.8,5.99,52.78,"Chennai Super Kings, Sri Lanka, Kolkata Knight Riders",Normal
+3,Bowler,Sunil Narine,22.4,9.37,31.78,Kolkata Knight Riders,Normal
+4,Bowler,Jasprit Bumrah,6.05,9.2,15.25,"Mumbai Indians, India",Normal
+5,Bowler,Jacob Duffy,33.16,9.01,42.17,"New Zealand, Royal Challengers Bengaluru",Normal
+6,Bowler,Rashid Khan,21.21,3.45,24.66,"Gujarat Titans, Afghanistan",Normal
+7,Bowler,Lockie Ferguson,37.76,6.44,44.2,"Gujarat Titans, New Zealand, Kolkata Knight Riders, Royal Challengers Bengaluru, Punjab Kings",Normal
+8,Bowler,Varun Chakravarthy,9.93,9.07,19.0,"Kolkata Knight Riders, India",Normal
+9,Bowler,Nathan Ellis,23.51,7.52,31.03,"Punjab Kings, Australia, Chennai Super Kings",Normal
+10,Bowler,Mitchell Santner,21.34,7.93,29.28,"Chennai Super Kings, New Zealand, Mumbai Indians",Normal
