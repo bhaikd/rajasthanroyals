@@ -1,0 +1,5 @@
+Discipline,Player,Unconstrained_Rank,HP_Balls,Shrunk_Rating,Shrunk_Baseline,Shrunk_Delta,Teams,Reason: author's eligibility choice
+Batter,Mohammad Rizwan,15,400,17.86,10.57,7.29,Pakistan,Players representing Pakistan or Pakistan A are excluded from both rankings as an eligibility choice made by the author; this is not required by the dataset or the problem statement.
+Bowler,Mohammad Nawaz,16,289,11.27,6.13,5.14,Pakistan,Players representing Pakistan or Pakistan A are excluded from both rankings as an eligibility choice made by the author; this is not required by the dataset or the problem statement.
+Bowler,Abrar Ahmed,20,189,10.77,7.47,3.3,Pakistan,Players representing Pakistan or Pakistan A are excluded from both rankings as an eligibility choice made by the author; this is not required by the dataset or the problem statement.
+Bowler,Sufiyan Muqeem,4,155,14.13,9.07,5.06,"Pakistan, Pakistan A",Players representing Pakistan or Pakistan A are excluded from both rankings as an eligibility choice made by the author; this is not required by the dataset or the problem statement.
