@@ -1,0 +1,10 @@
+Rank_i,Player_i,Rank_j,Player_j,P_i_beats_j,Distinguishability
+1,Josh Hazlewood,2,Matheesha Pathirana,50.4,Partly Distinguishable
+2,Matheesha Pathirana,3,Sunil Narine,70.1,Favored (p>=0.70)
+3,Sunil Narine,4,Jasprit Bumrah,53.9,Partly Distinguishable
+4,Jasprit Bumrah,5,Jacob Duffy,53.1,Partly Distinguishable
+5,Jacob Duffy,6,Rashid Khan,50.4,Partly Distinguishable
+6,Rashid Khan,7,Lockie Ferguson,51.6,Partly Distinguishable
+7,Lockie Ferguson,8,Varun Chakravarthy,50.9,Partly Distinguishable
+8,Varun Chakravarthy,9,Nathan Ellis,53.7,Partly Distinguishable
+9,Nathan Ellis,10,Mitchell Santner,47.7,Partly Distinguishable
