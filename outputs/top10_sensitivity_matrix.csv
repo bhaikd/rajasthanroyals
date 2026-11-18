@@ -1,0 +1,21 @@
+Discipline,Primary_Rank,Player,Spec_1,Spec_2,Spec_3,Spec_4,Spec_5,Spec_6,Spec_7,Spec_8,Spec_9,Spec_10,Spec_11,Spec_12,Spec_13,Spec_14
+Batter,1,Suryakumar Yadav,1,1,1,1,1,2,1,1,1,1.0,1.0,1,1.0,1
+Batter,2,Vaibhav Sooryavanshi,2,4,3,4,6,7,2,2,2,,2.0,2,2.0,3
+Batter,3,Jos Buttler,3,3,6,3,3,3,7,4,5,4.0,3.0,5,3.0,7
+Batter,4,Heinrich Klaasen,4,5,5,5,5,6,5,20,4,3.0,4.0,4,4.0,6
+Batter,5,Reeza Hendricks,5,6,9,6,4,4,6,9,3,2.0,,3,,4
+Batter,6,Abhishek Sharma,6,7,2,8,10,21,3,3,8,7.0,15.0,7,15.0,2
+Batter,7,Phil Salt,7,8,7,7,7,5,4,5,6,5.0,5.0,6,5.0,5
+Batter,8,Rinku Singh,8,2,4,2,2,1,12,10,7,6.0,10.0,8,10.0,9
+Batter,9,Shreyas Iyer,9,10,10,10,9,9,10,12,10,9.0,6.0,10,6.0,8
+Batter,10,Tim David,10,9,8,9,8,8,8,7,9,8.0,7.0,9,7.0,10
+Bowler,1,Josh Hazlewood,1,2,2,2,2,1,1,3,2,2.0,6.0,2,6.0,3
+Bowler,2,Matheesha Pathirana,2,1,1,1,1,2,2,1,1,1.0,2.0,1,2.0,1
+Bowler,3,Sunil Narine,3,4,3,4,4,4,3,2,3,3.0,1.0,3,1.0,2
+Bowler,4,Jasprit Bumrah,4,11,6,12,21,25,8,13,7,6.0,9.0,7,9.0,7
+Bowler,5,Jacob Duffy,5,9,11,9,10,9,4,6,5,,,5,,8
+Bowler,6,Rashid Khan,6,3,4,3,3,3,12,7,9,10.0,5.0,9,5.0,5
+Bowler,7,Lockie Ferguson,7,15,15,15,16,16,6,5,6,5.0,21.0,6,21.0,14
+Bowler,8,Varun Chakravarthy,8,5,5,5,5,5,10,4,4,4.0,4.0,4,4.0,4
+Bowler,9,Nathan Ellis,9,18,13,18,19,20,13,8,11,9.0,3.0,11,3.0,11
+Bowler,10,Mitchell Santner,10,7,8,7,8,10,16,9,10,8.0,11.0,10,11.0,10
