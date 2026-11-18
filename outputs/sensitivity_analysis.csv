@@ -1,0 +1,15 @@
+Specification,Batters_Jaccard,Bowlers_Jaccard
+"1. Base: Phase-Specific Wickets (PP 14.36, Mid 8.13, Death 2.92)",1.0,1.0
+2. Flat Wicket Value = 8.85 runs,1.0,0.54
+3. Wicket Value = 7.0 runs,1.0,0.54
+4. Wicket Value = 9.0 runs,1.0,0.54
+5. Wicket Value = 11.0 runs,1.0,0.54
+6. Wicket Value = 13.0 runs,0.82,0.54
+7. Pressure Threshold: Top 20% Leverage,0.82,0.54
+8. Pressure Threshold: Top 30% Leverage,0.67,0.82
+9. Minimum Sample: 150 Balls,1.0,0.82
+10. Minimum Sample: 200 Balls,0.82,0.82
+11. Competition: IPL-Only,0.67,0.54
+12. Competition: Tier 1 Only (No A-Team/Associate),1.0,0.82
+13. Competition: T20I Excluded,0.67,0.54
+14. Weighting: Recency Weighting (2022-26),1.0,0.67
