@@ -1,0 +1,3 @@
+Discipline,Observed_Std,Null_Mean_Std,Null_95_CI_Lower,Null_95_CI_Upper,P_Value,Interpretation
+Batters,5.0681,4.6289,4.1204,5.1701,0.051,Borderline Signal (p = 0.0510); High Single-Match Variance
+Bowlers,4.0524,3.6419,3.2298,4.1029,0.037,Statistically Distinguishable Signal (p = 0.0370)
